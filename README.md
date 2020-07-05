@@ -30,3 +30,10 @@ Install all dependencies for this project to be able to start it.
 
 Runs the app in the development mode.<br />
 Open [http://localhost:4000](http://localhost:4000) to view it.
+
+### `npm test ./tests/user.test.js`
+Runs Tests for add new user and for user sign in.<br />
+
+### `npm test ./tests/device.test.js`
+Runs Tests for add new device and for get devices.<br />
+NOTE : before you run test for device you should sign in and add testToken in the .env file in order to run test successfully

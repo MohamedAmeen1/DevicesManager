@@ -73,7 +73,6 @@ module.exports.getdevices = function (req, res) {
     try {
         device.find({ 'owner': req.user_id }, async (err, devices) => {
             if (err || !devices) {
-                console.log(devices)
                 return res.status(400).send({
                     status: 400,
                     message: "Error In Geting Devices"
@@ -88,7 +87,6 @@ module.exports.getdevices = function (req, res) {
             }
         })
     } catch (error) {
-        console.log(error)
         return res.send({
             status: 400,
             message: "Error In Geting Devices"
@@ -102,7 +100,6 @@ module.exports.getdevicebyid = function (req, res) {
     try {
         device.find({'_id':req.query.id,'owner': req.user_id }, async (err, device) => {
             if (err || !device) {
-                console.log(device)
                 return res.status(400).send({
                     status: 400,
                     message: "Error In Geting Device"
@@ -117,7 +114,6 @@ module.exports.getdevicebyid = function (req, res) {
             }
         })
     } catch (error) {
-        console.log(error)
         return res.send({
             status: 400,
             message: "Error In Geting Device"

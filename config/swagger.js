@@ -7,7 +7,7 @@ let options = {
             title: 'Devices manager',
             version: '1.0.0',
         },
-        host: process.env.url+'/',
+        host: process.env.swaggerurl+'/',
         basePath: '',
         produces: [
             "application/json",

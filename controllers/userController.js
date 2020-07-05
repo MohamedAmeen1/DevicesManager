@@ -51,7 +51,6 @@ module.exports.addUser = async function (req, res) {
 
 module.exports.activeemail = async function (req, res) {
     let email = req.params.code.substring(6, req.params.code.length - 6)
-    console.log(email)
     let random_key = Math.random().toString(36).substring(7);
     try {
         user.findOneAndUpdate({ code: req.params.code }, { 'status': 1, code: random_key }, async (err, user) => {
@@ -75,9 +74,8 @@ module.exports.signin = function (req, res) {
     const { error } = Joi.validate(req.body, schema);
     if (error) return res.status(400).send({ status: 400, message: error.details[0].message })
     try {
-        user.findOne({ 'email': req.body.email }, async (err, res_user) => {
+        user.findOne({'email': req.body.email}, async (err, res_user) => {
             if (err || !res_user) {
-                console.log(res_user)
                 return res.status(400).send({
                     status: 400,
                     message: "Log In failed. A user with this email address doesn't exist"

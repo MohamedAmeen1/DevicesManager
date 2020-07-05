@@ -18,7 +18,7 @@ app.use('/user',user_router)
 app.use('/device',auth,device_router)
 
 
-
 const server =app.listen(process.env.PORT||4000,()=>{
     console.log('server is running port : 4000')
 })
+module.exports = app;
